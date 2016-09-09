@@ -1,0 +1,6 @@
+com\niit\Backend\model\UserDetails.class
+com\niit\Backend\dao\SupplierDAO.class
+com\niit\Backend\model\Supplier.class
+com\niit\Backend\dao\UserDetailsDAO.class
+com\niit\Backend\model\Category.class
+com\niit\Backend\dao\CategoryDAO.class

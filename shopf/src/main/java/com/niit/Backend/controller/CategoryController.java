@@ -1,7 +1,5 @@
 package com.niit.Backend.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,12 +7,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.google.gson.Gson;
 import com.niit.Backend.dao.CategoryDAO;
 import com.niit.Backend.model.Category;
-
 @Controller
 public class CategoryController {
 	@Autowired
@@ -25,7 +20,7 @@ public class CategoryController {
 		model.addAttribute("category", new Category());
 		model.addAttribute("categoryList", categoryDAO.list());
 		model.addAttribute("CategoryPageClicked", "true");
-		return "addcategory";
+		return "admin";
 	}
 
 	@RequestMapping(value = { "addcategory", "editcategory/addcategory" }, method = RequestMethod.POST)
@@ -33,16 +28,6 @@ public class CategoryController {
 		categoryDAO.saveorUpdate(category);
 		return "redirect:/category";
 	}
-	@RequestMapping(value="/categorygson")
-	@ResponseBody
-	public String CategoryGson()
-	{
-		List<Category> list=categoryDAO.list();
-		Gson gson=new Gson();
-		String data=gson.toJson(list);
-		return data;
-	}
-
 
 	@RequestMapping("editcategory/{id}")
 	public String editCategory(@PathVariable("id") String id, Model model) {
@@ -50,7 +35,7 @@ public class CategoryController {
 		model.addAttribute("category", this.categoryDAO.get(id));
 		model.addAttribute("categoryList", categoryDAO.list());
 		model.addAttribute("CategoryPageClicked", "true");
-		return "addcategory";
+		return "admin";
 	}
 
 	@RequestMapping(value = { "removecategory/{id}", "editcategory/removecategory/{id}" })

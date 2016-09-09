@@ -6,11 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>CATEGORY MODULE</title>
-<script
-	src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
-	<script>
+<script>
 	var app = angular.module('myApp', []);
 	function MyController($scope, $http) {
 		$scope.sortType = 'name'; // set the default sort type
@@ -27,16 +23,18 @@
 		};
 	};
 </script>
-	
-
+<meta charset="ISO-8859-1">
+<title>CATEGORY MODULE</title>
 
 </head>
-
 <body><h1>CATEGORY MODULE</h1>
+<li class="active" >Logout<a href="perform_logout"
+							class="w3-hover-none"><span class="glyphicon glyphicon-log-out"></span></a></li>
+						
 <c:url var="addAction" value="addcategory"></c:url>
 
 	<form:form action="${addAction}" commandName="category">
-		<table border="1" cellpadding="10" cellspacing="10" align="center">
+		<table>
 		<thead>			<tr>
 				<td><form:label path="id">
 						<spring:message text="ID" />
@@ -76,9 +74,36 @@
 	</form:form>
 	<br>
 	
-	
-
-	<c:choose>
+	<%-- <c:if test="${!empty categoryList}">
+	<h1>Category List</h1>
+		<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th >category ID</th>
+				<th >category Name</th>
+				<th >category Description</th>
+				<th >Edit</th>
+				<th >Delete</th>
+			</tr>
+			<c:forEach items="${categoryList}" var="category">
+				<tr>
+					<td>${category.id}</td>
+					<td>${category.name}</td>
+					<td>${category.description}</td>
+					<td>
+					<form action="editcategory/${category.id}"  method="post">
+					<input type="submit" value="Edit">
+					</form></td>
+					<td><form action="removecategory/${category.id}">
+					<input type="submit" value="Delete">
+					</form></td>
+				</tr>
+			</c:forEach>
+			</thead>
+		</table>
+	</c:if>
+	 --%>
+	 <c:choose>
 		<c:when test="${!EditCategory}">
 			<div class="container" data-ng-app="myApp"
 				data-ng-controller="MyController" data-ng-init="getDataFromServer()">
