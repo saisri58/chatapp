@@ -84,7 +84,7 @@
 				<div class="panel-footer">
 					<div class="row text-center">
 						<div class="col-xs-3">
-							<a href="indexpage" class="btn btn-primary btn-sm btn-block">Continue Shopping</a></div>
+							<a href="index" class="btn btn-primary btn-sm btn-block">Continue Shopping</a></div>
 						<div class="col-xs-6">
 							<h4 class="text-right">Total : Rs ${CartPrice}</h4>
 						</div>

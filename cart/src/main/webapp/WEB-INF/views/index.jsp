@@ -8,7 +8,7 @@
 <html>
 <head>
 
-<title>Shopping Time</title>
+<title>RockBand</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +21,7 @@
 
 <style>
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-	width: 70%;
+	width:100%;
 	margin: auto;
 	height: 500;
 }
@@ -36,7 +36,7 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">CART</a>
+					<a class="navbar-brand" href="#">ROCKBAND</a>
 				</div>
 				<ul class="nav navbar-nav">
 					<!--  <li class="active"><a href=""><span
@@ -166,14 +166,14 @@ class="glyphicon glyphicon-logout"></span>logout
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active" style="width: 100%; height: 400">
-						<img src=<c:url value="http://ecx.images-amazon.com/images/I/41BcQeCa8lL._AC_US160_.jpg" /> alt="4"></div>
+						<img src=<c:url value="http://wallpapercave.com/wp/w6zBZeX.jpg" /> alt="4"></div>
 
 					<div class="item" style="width: 100%; height: 400">
-						<img src=<c:url value="http://ecx.images-amazon.com/images/I/41XzhejaQ8L._AC_US160_FMwebp_QL70_.jpg" /> alt="5">
+						<img src=<c:url value="https://s-media-cache-ak0.pinimg.com/736x/59/4f/c5/594fc56981ef667314d51e09f5f25b51.jpg" /> alt="5">
 					</div>
 
-					<div class="item" style="width: 100%; height: 400">
-						<img src=<c:url value="http://ecx.images-amazon.com/images/I/41f1tONnbBL._AC_US160_FMwebp_QL70_.jpg" /> alt="8">
+					<div class="item" style="width:100%; height: 400">
+						<img src=<c:url value="https://s-media-cache-ak0.pinimg.com/564x/fa/d8/b8/fad8b859f8719726ca4db9be44432fe7.jpg"/> alt="6">
 					</div>
 
 				</div>
@@ -206,9 +206,16 @@ class="glyphicon glyphicon-logout"></span>logout
 										src="<c:url value="/resources/Images/product/${product.id}.jpg"></c:url>"></a></li>
 								<c:choose>
 									<c:when test="${LoggedIn}">
-										<li><a href="addtoCart/${userId}/${product.id}"
-											class="w3-hover-none">Add to Cart</a></li>
+									<form action="addtoCart/${userId}/${product.id}">
+										<input type="number" value="1" name="quantity"
+											> <input
+											type="submit" value="Add to Cart"
+											class="btn  btn-success ">
+									</form>
+										<%-- <li><a href="addtoCart/${userId}/${product.id}"
+											class="w3-hover-none">Add to Cart</a></li> --%>
 									</c:when>
+									
 								</c:choose>
 							</c:forEach>
 						</ul> 

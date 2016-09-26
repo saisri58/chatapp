@@ -18,7 +18,7 @@ public class Cart {
 	private int userid;
 	private String productname;
 	private long price;
-	@Column(columnDefinition="int default 1")
+	
 	private int quantity;
 	private String status;
 	private String productid;

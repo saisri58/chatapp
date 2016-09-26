@@ -17,8 +17,7 @@
 	<h1>SUPPLIER MODULE</h1>
 	<c:url var="addAction" value="addsupplier"></c:url>
 
-	<form:form action="${addAction}" commandName="supplier"
-		enctype="multipart/form-data" method="post">
+	<form:form action="${addAction}" commandName="supplier"enctype="multipart/form-data" method="post">
 		<table border="1" cellpadding="10" cellspacing="10" align="center">
 			<thead>
 				<tr>
@@ -73,7 +72,7 @@
 
 	<c:if test="${!empty supplierList}">
 		<h1>Supplier List</h1>
-		<table class="table table-bordered table-striped">
+		<table class="table table-bordered tabl-hover">
 			<thead>
 				<tr>
 					<th>Supplier ID</th>
@@ -93,11 +92,11 @@
 
 						<td>
 							<form action="editsupplier/${supplier.id}" method="post">
-								<input type="submit" value="Edit">
+								<input type="submit" value="Edit" class="btn btn-warning">
 							</form>
 						</td>
 						<td><form action="removesupplier/${supplier.id}">
-								<input type="submit" value="Delete">
+								<input type="submit" value="Delete" class="btn btn-danger">
 							</form></td>
 					</tr>
 				</c:forEach>

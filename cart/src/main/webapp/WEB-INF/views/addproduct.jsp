@@ -7,8 +7,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
-<title>Insert title here</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+  </script>
+<title>product</title>
 
 
 
@@ -21,7 +24,7 @@
 		<h1>PRODUCT MODULE</h1>
 		<form:form action="${addAction}" commandName="product" enctype="multipart/form-data" method="post">
 
-			<table border="1" cellpadding="10" cellspacing="10" align="center">
+			<table class="table table-hover">
 			<thead>
 					<tr>
 						<td><form:label path="id">
@@ -85,7 +88,7 @@
 								<input type="submit" class="w3-btn w3-blue"
 									value="<spring:message text="Edit product"/>" />
 							</c:if> <c:if test="${empty product.name}">
-								<input type="submit" class="w3-btn w3-blue"
+								<input type="submit" class="btn btn-primary"
 									value="<spring:message text="Add product"/>" />
 							</c:if></td>
 					</tr>
@@ -95,7 +98,7 @@
 
 		<c:if test="${!empty productList}">
 			<h1>ALL PRODUCTS</h1>
-			<table class="table table-bordered table-striped">
+			<table class="table table-bordered table-hover ">
 				<thead>
 					<tr>
 						<th>Product ID</th>
@@ -117,11 +120,11 @@
 							<td>${product.categoryid}</td>
 							<td>
 								<form action="editproduct/${product.id}" method="post">
-									<input type="submit" value="Edit" class="w3-btn w3-blue">
+									<input type="submit" value="Edit" class="btn btn-warning">
 								</form>
 							</td>
 							<td><form action="removeproduct/${product.id}">
-									<input type="submit" value="Delete" class="w3-btn w3-blue">
+									<input type="submit" value="Delete" class="btn btn-danger">
 								</form></td>
 						</tr>
 					</c:forEach>
