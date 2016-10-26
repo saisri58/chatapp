@@ -20,6 +20,10 @@
 
 
 </head>
+<style>
+body{padding-top:20px;}
+</style>
+
 
 <body>
 
@@ -27,39 +31,47 @@
 	<form action="perform_login" method="post">
 		
 
-		<!-- 	<div class="panel-body">
-				<div class="form-group">
-					<label for="text">User Name:</label> <input type="text"
-						name="username" class="form-control"  placeholder="Enter email">
-				</div>
-			</div>
+		<div class="container">
+    <div class="row">
+		<div class="col-md-4 col-md-offset-4">
+    		<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Please sign in</h3>
+			 	</div>
+			  	<div class="panel-body">
+			    	<form accept-charset="UTF-8" role="form">
+                    <fieldset>
+			    	  	<div class="form-group">
+
+			
+					<label for="text">UserName:</label> <input type="text"
+						name="username" class="form-control"  placeholder="Enter username">
+					</div>
+					 
 
 
-			<div class="panel-body">
 				<div class="form-group">
+						
 					<label for="pwd">Password:</label> <input type="password"
 						name="password" class="form-control"  placeholder="Enter password">
-				</div>
-			</div>
-
- -->
- 
- <div>
-					<input type="text" placeholder="Username" required id="username" name="username" 
-						pattern=".{5,10}" title="minimum length for name is 5"/>
-				</div>
-				<div>
-					<input type="password" placeholder="Password" required id="password" name="password" 
-					 pattern=".{3,8}" title="Enter Valid credentials"/>
-				</div>
-				<div>
-					<input type="submit" value="Log in" />  <a href="Register">Register</a>
-				</div>
- 
-			
 				
 			</div>
+	<div class="checkbox">
+			    	    	<label>
+			    	    		<input name="remember" type="checkbox" value="Remember Me"> Remember Me
+			    	    	</label>
+			    	    </div>
+			    	
+
+			
+				<button type="submit" value="submit" class="btn btn-default">Submit</button>
+			</fieldset>
+			      	</form>
+			    </div>
+			</div>
 		</div>
+	</div>
+</div>
 
 	</form>
 

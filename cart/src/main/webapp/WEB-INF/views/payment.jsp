@@ -8,7 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Payment</title>
-<link href="<c:url value="/resources/css/credit.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/card.css" />" rel="stylesheet">
 </head>
 <body  style="padding-top: 75px">
 <div id="card">
@@ -32,7 +32,7 @@
                     <label>CVC Code</label>
                     <input type="text" name="cvc_code" placeholder="xxx" size="3" class="gr-input" required />
                 </li>
-                <li><button type="submit" class="btn btn-xs btn-primary">Pay</button></li>
+                <li><button type="submit" class="btn btn-xs btn-info">Payment</button></li>
          
             </ul>
         </form>
